@@ -483,6 +483,7 @@ header {
         opacity: 0;
         transform: translateY(200px) scale(0.3);
     }
+
     to {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -493,9 +494,11 @@ header {
     header {
         padding: 0 10px;
     }
+
     .head-left button {
         display: none;
     }
+
     .head-right a {
         font-size: 12px;
         padding: 0 5px;
@@ -504,58 +507,142 @@ header {
     .hero-info {
         left: 5%;
     }
+
     .hero-section h1 {
-        font-size: 90px;
+        font-size: 15vw;
+        line-height: 1;
+        margin-top: 15px;
     }
+
     .next-btn {
         left: 35%;
         top: 50%;
     }
+
     .about-section {
         margin: 0;
     }
+
     .about-section h1 {
         font-size: 50px;
     }
+
     .image-box {
         width: 300px;
         height: 500px;
     }
+
     .stones-img {
         margin-top: 80%;
         width: 400px;
     }
-    .about-section h4, .about-section h5 {
+
+    .about-section h4,
+    .about-section h5 {
         max-width: 350px;
         text-align: center;
     }
+
     .contact-section .img1 {
         width: 150px;
         height: 200px;
         right: 0;
         top: 20px;
     }
+
     .contact-section .img2 {
         top: 30px;
         left: -40px;
         width: 180px;
         height: 180px;
     }
-    
+
     .contact-section .img3 {
         left: -40px;
         bottom: 0;
         width: 150px;
         height: 180px;
     }
+
     .contact-section h1 {
         font-size: 60px;
         max-width: 300px;
     }
+
     .footer p {
         display: none;
     }
+
     .footer ul {
         margin-left: 70px;
+    }
+
+    .card h1 {
+        font-size: 10vw;
+        /* Changed from fixed 60px to viewport width */
+        max-width: 80%;
+        /* Allow more space for text */
+        top: 5px;
+        /* Adjust positioning */
+    }
+
+    .card p {
+        max-width: 80%;
+        /* Allow more space for text */
+        top: 20vw;
+        /* Adjust based on viewport */
+    }
+
+    /* Adjust card grid for mobile */
+    .info-cards {
+        grid-template-columns: 1fr;
+        /* Single column on mobile */
+    }
+
+    .card:nth-child(1) {
+        grid-column: span 1;
+        /* Reset the span for mobile */
+    }
+
+    .card:nth-child(2) {
+        grid-row: span 1;
+        /* Reset the span for mobile */
+        height: 40vh;
+        /* Uniform height */
+    }
+
+    .card:last-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40vh;
+        /* Match other mobile card heights */
+    }
+
+    .card:last-child h1 {
+        font-size: 2rem;
+        /* Adjusted mobile size */
+        text-align: center;
+        width: 80%;
+        /* Prevents edge touching */
+        margin: 0;
+        padding: 20px;
+        position: static;
+        /* Override any absolute positioning */
+        transform: none;
+        /* Reset transforms if any */
+        top: auto;
+        /* Reset positioning */
+        left: auto;
+    }
+
+    /* Remove video if it exists in this card */
+    .card:last-child video {
+        display: none;
+    }
+
+    /* Optional: Add subtle background if too empty */
+    .card:last-child {
+        background: linear-gradient(135deg, rgba(15, 18, 23, 0.7) 0%, rgba(42, 70, 255, 0.3) 100%);
     }
 }
